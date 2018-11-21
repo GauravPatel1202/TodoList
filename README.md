@@ -7,7 +7,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 1. Clone the project 
-2. cd Todolist
+2. cd TodoList floder 
+3. run the project ng serve
+4. localhost:4200 
+5.creating new Todolist input the text and click on button red or green or blue going to add new todolist item according to color red/green/blue
+6. using Tab filter data according to color Tab click
 
 ## Code scaffolding
 
