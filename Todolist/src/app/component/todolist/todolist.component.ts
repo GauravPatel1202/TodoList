@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TestService } from '../../service/test.service';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { forkJoin } from "rxjs/observable/forkJoin";
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-todolist',
@@ -10,11 +10,11 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent implements OnInit {
-  table:any;
-  tablelist:any;
+  table:any[];
+  tablelist:any[];
   info:any;
   activeTab:any;
-  constructor(public TestService:TestService, public http:HttpClient) { 
+  constructor(public TestService:TestService, public http:HttpClient,public router :Router) { 
    this.activeTab="All"
   }
 
@@ -49,4 +49,15 @@ getlistData(){
   })
 }
 } 
+dataAddTODOlist(){
+   this.tablelist.push({
+        "name":"abhishek",
+        "marks":"red",
+        "id":"KV2017-5A1"
+    })
+ }
+dataView(data){
+   sessionStorage.setItem('listdata', JSON.stringify(data);
+   this.router.navigate(['/view']);
+   }
 }

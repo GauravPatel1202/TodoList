@@ -1,16 +1,35 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="">
     <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button All" [ngClass]="{'active':activeTab === 'All'}" (click)="tableData('All')">ALL</a></div>
     <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Red" [ngClass]="{'active':activeTab === 'red'}" (click)="tableData('red')" >Red</a></div>
     <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Green" [ngClass]="{'active':activeTab === 'green'}"  (click)="tableData('green')" >Green</a></div>
     <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Blue" [ngClass]="{'active':activeTab === 'blue'}" (click)="tableData('blue')">Blue</a></div>
   </div>
 </div>
-<div class="container-fluid">
-     <div class="row">
-        <div class="box col-lg-8 col-md-8 col-xs-12" style="height: 400px"> test</div>
-        <div class="box col-lg-4 col-md-4 col-xs-12" *ngFor="let data of table;index as i" [attr.data-index]="i"><p class="number">{{i+1}}</p>
-          <p id="rcorners" [ngClass]="{'Red':data.marks === 'red','Green':data.marks === 'green','Blue':data.marks === 'blue'}"></p>
+<div class="container-fluid" >
+     <div class="">
+        <div class="box col-lg-8 col-md-8 col-xs-12 inputDiv">
+          
+        
+          <div class="container">
+            <div class="btmBox">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-xs-3">
+         <button type="button" class="btn btn-primary redbtm btn-md">Red</button> 
+        </div> <div class="col-lg-3 col-md-3 col-xs-3">
+         <button type="button" class="btn btn-primary greenbtm btn-md">Green</button> 
+       </div><div class="col-lg-3 col-md-3 col-xs-3">
+         <button type="button" class="btn btn-primary bluebtm btn-md">Blue</button> 
+       </div>
+       <div class="col-lg-3 col-md-3 col-xs-3">
+          <p id="rcornersINPUT"><input type="checkbox" (click)="dataAddTODOlist()"></p>
+       </div>
+       </div>
+       </div>
+       </div>
+        </div>
+        <div class="box col-lg-4 col-md-4 col-xs-12" *ngFor="let data of table;index as i" [attr.data-index]="i" (click)="dataView(data)"><p class="number" >{{i+1}}</p>
+          <p id="rcorners" [ngClass]="{'Red':data.marks === 'red','Green':data.marks === 'green','Blue':data.marks === 'blue'}" ></p>
         </div>
    
     </div>

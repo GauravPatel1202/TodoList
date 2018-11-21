@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-view',
@@ -10,6 +11,7 @@ export class TOdoViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	this.info = JSON.parse(sessionStorage.getItem('listdata'));
   }
 
 }

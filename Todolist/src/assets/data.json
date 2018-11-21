@@ -2,36 +2,36 @@
     {
         "name":"rajiv",
         "marks":"red",
-        "rollNumber":"KV2017-5A2"
+        "id":"KV2017-5A2"
+    },
+    {
+        "name":"abhishek",
+        "marks":"red",
+        "id":"KV2017-5A1"
+    },
+    {
+        "name":"abhishek",
+        "marks":"blue",
+        "id":"KV2017-5A1"
+    },
+    {
+        "name":"abhishek",
+        "marks":"red",
+        "id":"KV2017-5A1"
     },
     {
         "name":"abhishek",
         "marks":"green",
-        "rollNumber":"KV2017-5A1"
+        "id":"KV2017-5A1"
     },
     {
         "name":"abhishek",
         "marks":"red",
-        "rollNumber":"KV2017-5A1"
-    },
-    {
-        "name":"abhishek",
-        "marks":"green",
-        "rollNumber":"KV2017-5A1"
-    },
-    {
-        "name":"abhishek",
-        "marks":"red",
-        "rollNumber":"KV2017-5A1"
-    },
-    {
-        "name":"abhishek",
-        "marks":"red",
-        "rollNumber":"KV2017-5A1"
+        "id":"KV2017-5A1"
     },
     {
         "name":"zoya",
-        "marks":"blue",
-        "rollNumber":"KV2017-5A3"
+        "marks":"red",
+        "id":"KV2017-5A3"
     }
 ]
