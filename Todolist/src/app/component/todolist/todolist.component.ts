@@ -10,13 +10,30 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent implements OnInit {
-  dataObject:any;
-  fileterange:any;
-  getlistData:any;
+  table:any;
   constructor(public TestService:TestService, public http:HttpClient) { }
 
   ngOnInit() {
- 
+     this.getlistData()
+     
   }
-   
+getlistData(){
+     this.TestService.getdata().subscribe(data => {
+    this.tablelist=data;
+    this.table=data;
+    this.tableData()
+     }
+    )
+   }
+ tableData(tableInput){
+  if(!tableInput) return this.tablelist;
+  if(tableInput==="All"){
+    this.table =this.tablelist; 
+  }else{
+  this.table = this.tablelist.filter(function(data){
+    return data.marks === tableInput;
+
+  })
+}
+} 
 }
