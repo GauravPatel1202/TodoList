@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./todo-view.component.css']
 })
 export class TOdoViewComponent implements OnInit {
-
+info:any;
   constructor() { }
 
   ngOnInit() {

@@ -10,9 +10,10 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent implements OnInit {
-  table:any[];
-  tablelist:any[];
-  info:any;
+  table:any;
+  tablelist:any;
+  info:String;
+  testValue:String;
   activeTab:any;
   constructor(public TestService:TestService, public http:HttpClient,public router :Router) { 
    this.activeTab="All"
@@ -49,15 +50,22 @@ getlistData(){
   })
 }
 } 
-dataAddTODOlist(){
+dataAddTODOlist(data){
+    if(data===this.activeTab){
+      this.table.push({
+        "name":this.testValue,
+        "marks":data
+    })
+    }else{
    this.tablelist.push({
-        "name":"abhishek",
-        "marks":"red",
-        "id":"KV2017-5A1"
+        "name":this.testValue,
+        "marks":data
     })
  }
+   this.testValue=''
+ }
 dataView(data){
-   sessionStorage.setItem('listdata', JSON.stringify(data);
+   sessionStorage.setItem('listdata', JSON.stringify(data));
    this.router.navigate(['/view']);
    }
 }

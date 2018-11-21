@@ -9,26 +9,28 @@
 <div class="container-fluid" >
      <div class="">
         <div class="box col-lg-8 col-md-8 col-xs-12 inputDiv">
-          
+        <textarea  [(ngModel)]="testValue"></textarea>
         
-          <div class="container">
-            <div class="btmBox">
-        <div class="row">
-          <div class="col-lg-3 col-md-3 col-xs-3">
-         <button type="button" class="btn btn-primary redbtm btn-md">Red</button> 
-        </div> <div class="col-lg-3 col-md-3 col-xs-3">
-         <button type="button" class="btn btn-primary greenbtm btn-md">Green</button> 
-       </div><div class="col-lg-3 col-md-3 col-xs-3">
-         <button type="button" class="btn btn-primary bluebtm btn-md">Blue</button> 
+          <div class="container-fluid btmBox" >
+            <div class="">
+        <div class="row classRow">
+          <div class="col-lg-9 col-md-9 col-xs-9">
+       
+         <button type="button" class="btn btn-primary redbtm btn-md col-lg-2 col-md-2 col-xs-2" (click)="dataAddTODOlist('red')">Red</button> 
+   
+         <button type="button" class="btn btn-primary greenbtm btn-md col-lg-2 col-md-2 col-xs-2" (click)="dataAddTODOlist('green')">Green</button> 
+       
+         <button type="button" class="btn btn-primary bluebtm btn-md col-lg-2 col-md-2 col-xs-2" (click)="dataAddTODOlist('blue')">Blue</button> 
+        
        </div>
-       <div class="col-lg-3 col-md-3 col-xs-3">
-          <p id="rcornersINPUT"><input type="checkbox" (click)="dataAddTODOlist()"></p>
+       <div class="col-lg-3 col-md-3 col-xs-3 inputbo">
+          <p id="rcornersINPUT"><input type="checkbox" ></p>
        </div>
        </div>
        </div>
        </div>
         </div>
-        <div class="box col-lg-4 col-md-4 col-xs-12" *ngFor="let data of table;index as i" [attr.data-index]="i" (click)="dataView(data)"><p class="number" >{{i+1}}</p>
+        <div class="box col-lg-4 col-md-4 col-xs-12" *ngFor="let data of table;index as i" [attr.data-index]="i" (click)="dataView(data)"><p class="number" >{{i+1}} <span>{{data.name}}</span></p>
           <p id="rcorners" [ngClass]="{'Red':data.marks === 'red','Green':data.marks === 'green','Blue':data.marks === 'blue'}" ></p>
         </div>
    
