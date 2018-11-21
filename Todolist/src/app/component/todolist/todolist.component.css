@@ -1,0 +1,44 @@
+#content {
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+}
+.box {
+
+    display: inline-block;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.button {
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 10px 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px 10px 0px 0px;
+}
+.all{
+   border: 1px solid black; 
+   color: black;
+}
+.Red{
+    border: 1px solid red;
+    color: red; 
+}
+.Green{
+     border: 1px solid green; 
+     color: green
+}
+.Blue{
+     border: 1px solid blue; 
+     color: blue;
+}
+.active{
+    background: black;
+    border: 1px solid black; 
+    color: #ffffff;
+}
