@@ -11,25 +11,38 @@ import { FormsModule } from '@angular/forms';
 })
 export class TodolistComponent implements OnInit {
   table:any;
-  constructor(public TestService:TestService, public http:HttpClient) { }
+  tablelist:any;
+  info:any;
+  activeTab:any;
+  constructor(public TestService:TestService, public http:HttpClient) { 
+   this.activeTab="All"
+  }
 
   ngOnInit() {
      this.getlistData()
+     this.info = sessionStorage.getItem('activeTab');
+     if(!this.info){
+      this.info="All"
+     }
      
   }
 getlistData(){
      this.TestService.getdata().subscribe(data => {
-    this.tablelist=data;
-    this.table=data;
-    this.tableData()
+     this.tablelist=data;
+     this.table=data;
+     this.tableData(this.info)
      }
     )
    }
+
  tableData(tableInput){
-  if(!tableInput) return this.tablelist;
-  if(tableInput==="All"){
-    this.table =this.tablelist; 
-  }else{
+  sessionStorage.setItem('activeTab', tableInput);
+  this.activeTab=tableInput
+  if(!tableInput||tableInput==="All"){
+    this.activeTab="All"
+   this.table =this.tablelist;
+  }
+  else{
   this.table = this.tablelist.filter(function(data){
     return data.marks === tableInput;
 

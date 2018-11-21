@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="row">
-    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button All active" (click)="tableData('All')">ALL</a></div>
-    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Red" (click)="tableData('red')" >Red</a></div>
-    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Green" (click)="tableData('green')" >Green</a></div>
-    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Blue" (click)="tableData('blue')">Blue</a></div>
+    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button All" [ngClass]="{'active':activeTab === 'All'}" (click)="tableData('All')">ALL</a></div>
+    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Red" [ngClass]="{'active':activeTab === 'red'}" (click)="tableData('red')" >Red</a></div>
+    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Green" [ngClass]="{'active':activeTab === 'green'}"  (click)="tableData('green')" >Green</a></div>
+    <div class=" col-lg-3 col-md-3 col-xs-3"><a class="button Blue" [ngClass]="{'active':activeTab === 'blue'}" (click)="tableData('blue')">Blue</a></div>
   </div>
 </div>
 <div class="container-fluid">
